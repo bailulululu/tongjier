@@ -1,0 +1,9 @@
+import requests
+def bailu():
+    url=['http://mm.17k.com/','http://www.17k.com/book/2793405.html']
+    file='C/Users/Administrator/Desktop/test.html'
+    with open('/Users/Administrator/Desktop/test.html','a',encoding='utf-8') as f:
+        for i in range(2):
+            header={'User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36'}
+            response = requests.get('http://mm.17k.com/',headers=header)
+            f.write(response.text)
