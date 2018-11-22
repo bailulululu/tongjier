@@ -1,0 +1,68 @@
+1.
+	
+bailulu@ubuntu:~$ sudo mysql -u root -p
+	mysql> use hello;
+	
+mysql> source /home/bailulu/Desktop/hr.sql;
+
+A.mysql> create table shopping_cart(
+
+-> id int primary key not null auto_increment,
+
+-> name varchar(45),
+
+-> favorite varchar(45),
+
+-> discount_reminder varchar(45),
+
+-> double_twelve_wish varchar(45));
+
+mysql> desc shopping_cart;
+
+#建立一个购物车的表，并添加“爱好”、“折扣提醒”、“双12愿望”
+
+B.mysql> insert into
+ shopping_cart(id,name,favorite,discount_reminder,double_twelve_wish)
+
+values(1,"one","apple","banana","haw"),(2,"two","water","mike","drink"),(3,"three","fish","turtle","beef");
+
+mysql> select * from shopping_ddcart;
+
+#增加用户
+
+C.mysql> update shopping_cart set double_twelve_wish="lemon"where id=1;
+	
+mysql> select * from shopping_cart;
+
+#更新用户一个12.12的愿望
+
+D.mysql> delete from shopping_cart where id=3;
+	mysql> select * from shopping_cart;
+
+
+#删除一个用户
+
+2.
+
+mysql> show tables;
+
+mysql> select * from jobs;
+
+A.mysql> select * from jobs where min_salary>5000;
+
+#查询
+
+B.mysql> select * from jobs order by min_salary desc;
+
+#排序（降序）
+
+D.mysql> select min_salary,count(min_salary)from jobs group by min_salary;
+
+#聚合
+
+E.mysql> select * from departments;
+
+mysql> select location_id,count(location_id) from departments group by location_id;
+
+mysql> select * from departments where department_id in(select max(department_id) from departments group by location_id having count(location_id)>1);
+#查询某列具有重复值的内容，返回重复值的最大ID的记录
