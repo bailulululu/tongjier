@@ -1,0 +1,56 @@
+1.shoucang
+
+create table shoucang( id int primary key auto_increment, name varchar(30));
+
+insert into shoucang(name)values("a"),("b");
+
+select * from shoucang;
+
+delete from shoucang where id=1;
+
+select * from shoucang;
+
+2.movie
+create table movies(
+    
+id int primary key auto_increment,
+
+name varchar(30) not null,
+
+years int,
+
+director varchar(30),
+
+score int);
+
+select * from movies;
+
+insert into movies(name,years,director,score) values
+
+("a",1998,"aaa","8"),("b",2006,"ccc","10"),("c",2012,"ddd","9"),
+("d",2019,"xxx","6");
+select * from movies;
+select movies.name like "%la%" from movies;               select * from movies where movies.name like "%la%";
+
+select * from movies where movies.director like"%y%";
+select * from movies where movies.years=2012;
+select * from movies where movies.score>8;
+3.
+3.yonghu
+create table yonghu(id int auto_increment primary key,name varchar(30),loginmethod set('phone','pc','ipad'),logindata datetime);
+insert into yonghu(name,loginmethod,logindata) values ("a","pc","2018-10-10 00:00:01");
+insert into yonghu(name,loginmethod,logindata) values ("a","pc","2018-11-20 00:00:01");
+
+insert into yonghu(name,loginmethod,logindata) values ("a","pc","2018-11-10 00:00:01");
+
+select * from yonghu;
+select case
+
+when abs(datediff(logindata,now()))>30 then "qusiba"
+
+when abs(datediff(logindata,now()))>9 then "nihuibuhuilai"
+when abs(datediff(logindata,now()))>7 then "come on"
+ end from yonghu;
+
+ 
+case when abs(datediff(logindata,now()))>30 then "qusiba" when abs(datediff(logindata,now()))>9 then "nihuibuhuilai" when abs(datediff(logindata,now()))>7 then "come on" end 
